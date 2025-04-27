@@ -13,16 +13,16 @@ export default function MainLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <ProtectedRoute>
-          <div className="flex min-h-screen text-white">
-            <Sidebar />
-            <div className="flex-1 flex flex-col">
-              <Navbar />
-              {children}
-              <Footer />
-            </div>
+        {/* <ProtectedRoute> */}
+        <div className="flex min-h-screen text-white">
+          <Sidebar />
+          <div className="flex-1 flex flex-col">
+            <Navbar />
+            {children}
+            <Footer />
           </div>
-        </ProtectedRoute>
+        </div>
+        {/* </ProtectedRoute> */}
       </body>
     </html>
   );

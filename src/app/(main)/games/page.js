@@ -1,6 +1,7 @@
 import React from "react";
 import GameSearchResults from "../../../components/Games";
 import GameSection from "../../../components/GameSection";
+import ProtectedRoute from "../../../components/ProtectedRoute";
 
 const featuredGames = [
   {
@@ -44,11 +45,11 @@ const featuredGames = [
 
 export default function page() {
   return (
-    <>
+    <ProtectedRoute>
       <GameSearchResults />
       {featuredGames.map((game) => (
         <GameSection key={game.id} game={game} />
       ))}
-    </>
+    </ProtectedRoute>
   );
 }

@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 export default function ProtectedRoute({ children }) {
   const router = useRouter();
   const isLoggedIn = useSelector((state) => state.auth?.login);
+  console.log(isLoggedIn);
 
   React.useEffect(() => {
     if (!isLoggedIn) {
@@ -13,6 +14,6 @@ export default function ProtectedRoute({ children }) {
     }
   }, [isLoggedIn]);
 
-  if (!isLoggedIn) return null;
+  // if (!isLoggedIn) return ;  
   return <>{children}</>;
 }
