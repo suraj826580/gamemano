@@ -19,7 +19,7 @@ export default function GameSection({ game }) {
             : {}
         }
       >
-        <div className="flex justify-between  ">
+        <div className="flex justify-between flex-wrap ">
           <h2 className="font-bold mb-4 font-aoboshi text-[70px] ">
             {game.title}
           </h2>

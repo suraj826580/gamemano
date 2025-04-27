@@ -67,8 +67,7 @@ export default function LoginPage() {
             <div className="space-y-2 ">
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-white "
-              >
+                className="block text-sm font-medium text-white ">
                 Email
               </label>
               <input
@@ -87,14 +86,10 @@ export default function LoginPage() {
               <div className="flex justify-between">
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium text-gray-300"
-                >
+                  className="block text-sm font-medium text-gray-300">
                   Password
                 </label>
-                <Link
-                  href="/forgot-password"
-                  className="text-sm text-white"
-                >
+                <Link href="/forgot-password" className="text-sm text-white">
                   Forgot password?
                 </Link>
               </div>
@@ -112,8 +107,7 @@ export default function LoginPage() {
                 <button
                   type="button"
                   className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-white"
-                  onClick={() => setShowPassword(!showPassword)}
-                >
+                  onClick={() => setShowPassword(!showPassword)}>
                   {showPassword ? (
                     <EyeOff className="h-5 w-5" />
                   ) : (
@@ -125,8 +119,7 @@ export default function LoginPage() {
 
             <button
               type="submit"
-              className="w-full bg-cream text-primary font-bold py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2"
-            >
+              className="w-full bg-cream text-primary font-bold py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2">
               Login <ArrowRight className="h-4 w-4" />
             </button>
           </form>
@@ -134,10 +127,7 @@ export default function LoginPage() {
           <div className="mt-6 text-center">
             <p className="text-gray-400">
               Don&apos;t have an account?{" "}
-              <Link
-                href="/signup"
-                className="text-cream font-medium"
-              >
+              <Link href="/signup" className="text-cream font-medium">
                 Sign up
               </Link>
             </p>
@@ -151,9 +141,7 @@ export default function LoginPage() {
               <div className="w-full border-t border-gray-800"></div>
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 text-gray-400">
-                Or continue with
-              </span>
+              <span className="px-2 text-gray-400">Or continue with</span>
             </div>
           </div>
 
