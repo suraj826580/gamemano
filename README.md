@@ -34,7 +34,7 @@ This project is a web-based **Game Store Portal** built with modern web technolo
 - On successful signup, user data (like email, password) is saved in **LocalStorage**.
 - Form validation ensures proper input before saving data.
 
-<img src="" alt="Sign Up Page" width="100%" />
+<img src="./public/sign-up.png" alt="Sign Up Page" width="60%" />
 
 ---
 
@@ -44,8 +44,7 @@ This project is a web-based **Game Store Portal** built with modern web technolo
 - Login credentials are matched against stored data.
 - After successful login, a session flag is saved in **SessionStorage** to maintain session.
 
-<img src="path/to/login-page.png" alt="Login Page" width="100%" />
-<!-- Replace 'path/to/login-page.png' with your actual image link -->
+<img src="./public/login.png" alt="login Up Page" width="60%" />
 
 ---
 
@@ -65,7 +64,6 @@ This project is a web-based **Game Store Portal** built with modern web technolo
   - **Carousel** to display featured games.
 
 <img src="path/to/landing-page.png" alt="Landing Page" width="100%" />
-<!-- Replace 'path/to/landing-page.png' with your actual image link -->
 
 ---
 
@@ -74,8 +72,7 @@ This project is a web-based **Game Store Portal** built with modern web technolo
 - Users can search for games using the search bar.
 - The search input is **debounced** to optimize API calls and improve performance.
 
-<img src="path/to/search-functionality.png" alt="Search Functionality" width="100%" />
-<!-- Replace 'path/to/search-functionality.png' with your actual image link -->
+  <img src="./public/searchInput.png" alt="login Up Page" width="60%" />
 
 ---
 
@@ -84,8 +81,7 @@ This project is a web-based **Game Store Portal** built with modern web technolo
 - The **Game Store** page allows users to browse and filter games.
 - **Categories** and **filters** are dynamic, helping users find games easily.
 
-<img src="path/to/game-store.png" alt="Game Store Page" width="100%" />
-<!-- Replace 'path/to/game-store.png' with your actual image link -->
+  <img src="./public/game_store.png" alt="login Up Page" width="60%" />
 
 ---
 
@@ -94,8 +90,7 @@ This project is a web-based **Game Store Portal** built with modern web technolo
 - The sidebar expands smoothly on hover, displaying additional navigation options.
 - Implemented using Tailwind transitions for a polished UX.
 
-<img src="path/to/sidebar-hover.png" alt="Sidebar Hover Effect" width="100%" />
-<!-- Replace 'path/to/sidebar-hover.png' with your actual image link -->
+  <img src="./public/sidebar.png" alt="login Up Page" width="60%" />
 
 ---
 
