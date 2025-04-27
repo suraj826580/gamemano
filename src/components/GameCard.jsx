@@ -1,5 +1,3 @@
-import RatingFilter from "./RatingFilter";
-
 export default function GameCard({ game, game: { onlineCount = 1200 } }) {
   const stars = Math.round(game.rating);
   return (
@@ -14,8 +12,7 @@ export default function GameCard({ game, game: { onlineCount = 1200 } }) {
                 style={{
                   backgroundColor: "#00FF0A",
                   boxShadow: "0px 0px 4px 2px #7CFF8299",
-                }}
-              ></span>
+                }}></span>
               <span>{onlineCount} Online</span>
             </div>
           </div>
@@ -27,7 +24,7 @@ export default function GameCard({ game, game: { onlineCount = 1200 } }) {
         <h3 className="font-400 text-[30px] text-lg mb-1 font-aoboshi">
           {game.title}
         </h3>
-        <div className="flex mb-1">
+        <div  className="flex mb-1">
           {[...Array(5)].map((_, i) => (
             <svg
               key={i}
@@ -35,8 +32,7 @@ export default function GameCard({ game, game: { onlineCount = 1200 } }) {
                 i < stars ? "text-orange-500 fill-orange-500" : "text-gray-400"
               }`}
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
+              viewBox="0 0 24 24">
               <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
             </svg>
           ))}

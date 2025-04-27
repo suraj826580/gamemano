@@ -90,6 +90,24 @@ export default function GameSearchResults() {
 }
 
 export function FilterSidebar({ categoryList = [] }) {
+  const [selectedCategories, setSelectedCategories] = useState({});
+  const [selectedPlatforms, setSelectedPlatforms] = useState({});
+
+  const handleCategoryChange = (label) => {
+    setSelectedCategories((prev) => ({
+      ...prev,
+      [label]: !prev[label],
+    }));
+  };
+
+  const handlePlatformChange = (label) => {
+    setSelectedPlatforms((prev) => ({
+      ...prev,
+      [label]: !prev[label],
+    }));
+  };
+
+  function applyFilterFunc() {}
   return (
     <div className="rounded-lg p-6 text-white sticky top-4 max-h-[calc(100vh-2rem)] overflow-y-auto scrollbar-hide bg-black/20 backdrop-blur-sm border border-white/10">
       <style jsx global>{`
@@ -106,7 +124,12 @@ export function FilterSidebar({ categoryList = [] }) {
         <h3 className="text-xl font-medium mb-4">Categories</h3>
         <div className="space-y-3">
           {categoryList.map((ele) => (
-            <FilterCheckbox key={ele.name} label={ele?.name} />
+            <FilterCheckbox
+              key={ele.name}
+              label={ele.name}
+              checked={!!selectedCategories[ele.name]}
+              onChange={() => handleCategoryChange(ele.name)}
+            />
           ))}
         </div>
       </div>
@@ -114,11 +137,31 @@ export function FilterSidebar({ categoryList = [] }) {
       <div className="mb-8">
         <h3 className="text-xl font-medium mb-4">Platforms</h3>
         <div className="space-y-3">
-          <FilterCheckbox label="PC" />
-          <FilterCheckbox label="PlayStation 5" />
-          <FilterCheckbox label="PlayStation 4" />
-          <FilterCheckbox label="Xbox Series" />
-          <FilterCheckbox label="Nintendo Switch" />
+          <FilterCheckbox
+            label="PC"
+            checked={!!selectedPlatforms["PC"]}
+            onChange={() => handlePlatformChange("PC")}
+          />
+          <FilterCheckbox
+            label="PlayStation 5"
+            checked={!!selectedPlatforms["PlayStation_5"]}
+            onChange={() => handlePlatformChange("PlayStation_5")}
+          />
+          <FilterCheckbox
+            label="PlayStation 4"
+            checked={!!selectedPlatforms["PlayStation_4"]}
+            onChange={() => handlePlatformChange("PlayStation_4")}
+          />
+          <FilterCheckbox
+            label="Xbox_Series"
+            checked={!!selectedPlatforms["Xbox_Series"]}
+            onChange={() => handlePlatformChange("Xbox_Series")}
+          />
+          <FilterCheckbox
+            label="Nintendo_Switch"
+            checked={!!selectedPlatforms["Nintendo_Switch"]}
+            onChange={() => handlePlatformChange("Nintendo_Switch")}
+          />
         </div>
       </div>
 
@@ -164,7 +207,9 @@ export function FilterSidebar({ categoryList = [] }) {
         </div>
       </div>
 
-      <button className="w-full bg-[#F08B2C] hover:bg-[#E67E22] text-white py-3 rounded-full font-medium">
+      <button
+        className="w-full bg-[#F08B2C] hover:bg-[#E67E22] text-white py-3 rounded-full font-medium"
+        onClick={applyFilterFunc}>
         Apply Filters
       </button>
     </div>
@@ -199,8 +244,7 @@ function SortDropdown({ currentOption, onSelect }) {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
-        className="flex items-center bg-primary/20 backdrop-blur-sm border border-white/10 text-white hover:bg-black/30 rounded-full px-4 py-1 h-auto text-sm"
-      >
+        className="flex items-center bg-primary/20 backdrop-blur-sm border border-white/10 text-white hover:bg-black/30 rounded-full px-4 py-1 h-auto text-sm">
         Sort by: {currentOption.label}{" "}
         <ChevronDown
           className={`ml-1 w-4 h-4 transition-transform ${
@@ -218,8 +262,7 @@ function SortDropdown({ currentOption, onSelect }) {
                 className={`w-full rounded-full text-left px-4  py-2 my-1 text-sm hover:bg-[#E58E27] bg-[${
                   currentOption.label === option.label ? option.color : ""
                 }] `}
-                onClick={() => handleSelect(option)}
-              >
+                onClick={() => handleSelect(option)}>
                 {option.label}
               </button>
             ))}
