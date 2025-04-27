@@ -51,7 +51,7 @@ export default function GameCard({ game, game: { onlineCount = 1200 } }) {
 
         {/* Description Details */}
         <span className="font-poppins text-sm font-500">
-          {game.description?.substring(0, 120) + "..."}
+          {game.description?.substring(0, 100) + "..."}
         </span>
 
         {/* Rating and Price */}
